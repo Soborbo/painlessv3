@@ -7,6 +7,14 @@
 import { CONFIG } from '@/lib/config';
 import { logger } from '@/lib/utils/logger';
 
+// Re-export security functions
+export {
+  checkRateLimit,
+  getRemainingRequests,
+  createRateLimitResponse,
+} from './rate-limit';
+export { checkPayloadSize, createPayloadTooLargeResponse } from './payload-limit';
+
 let _initialized = false;
 
 /**
