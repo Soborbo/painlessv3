@@ -1,0 +1,319 @@
+---
+/**
+ * HOME PAGE
+ * 
+ * Landing page with CTA to calculator
+ */
+
+import '@/styles/global.css';
+import { Button } from '@/components/ui/button';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Get your instant quote with our advanced calculator. Fast, accurate, and easy to use."
+    />
+    <title>Home | Calculator Boilerplate</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body class="min-h-screen bg-background antialiased">
+    <!-- Header -->
+    <header
+      class="border-b sticky top-0 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 z-50"
+    >
+      <div class="container mx-auto px-4 py-4">
+        <div class="flex items-center justify-between">
+          <a href="/" class="text-xl font-bold text-primary"> Calculator Boilerplate </a>
+          <nav class="hidden md:flex items-center gap-6">
+            <a
+              href="#features"
+              class="text-sm text-muted-foreground hover:text-foreground transition-colors"
+            >
+              Features
+            </a>
+            <a
+              href="#how-it-works"
+              class="text-sm text-muted-foreground hover:text-foreground transition-colors"
+            >
+              How it Works
+            </a>
+            <a
+              href="#pricing"
+              class="text-sm text-muted-foreground hover:text-foreground transition-colors"
+            >
+              Pricing
+            </a>
+            <a href="/calculator/step-01">
+              <Button size="sm">Get Started</Button>
+            </a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="py-20 md:py-32">
+      <div class="container mx-auto px-4">
+        <div class="max-w-3xl mx-auto text-center">
+          <h1 class="text-4xl md:text-6xl font-bold tracking-tight mb-6">
+            Get Your Instant Quote in
+            <span class="text-primary">Minutes</span>
+          </h1>
+          <p class="text-xl text-muted-foreground mb-8">
+            Our advanced calculator provides accurate pricing based on your specific needs. Fast,
+            transparent, and easy to use.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="/calculator/step-01">
+              <Button size="lg" class="w-full sm:w-auto"> Start Calculator → </Button>
+            </a>
+            <a href="#how-it-works">
+              <Button size="lg" variant="outline" class="w-full sm:w-auto"> Learn More </Button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-secondary/50">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">Why Choose Our Calculator?</h2>
+          <p class="text-xl text-muted-foreground">
+            Built with modern technology and best practices
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <!-- Feature 1 -->
+          <Card>
+            <CardHeader>
+              <div
+                class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4"
+              >
+                <span class="text-2xl">⚡</span>
+              </div>
+              <CardTitle>Lightning Fast</CardTitle>
+              <CardDescription>
+                Get your quote instantly with our optimized calculation engine
+              </CardDescription>
+            </CardHeader>
+          </Card>
+
+          <!-- Feature 2 -->
+          <Card>
+            <CardHeader>
+              <div
+                class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4"
+              >
+                <span class="text-2xl">🎯</span>
+              </div>
+              <CardTitle>Accurate Pricing</CardTitle>
+              <CardDescription>
+                Advanced algorithms ensure precise quotes every time
+              </CardDescription>
+            </CardHeader>
+          </Card>
+
+          <!-- Feature 3 -->
+          <Card>
+            <CardHeader>
+              <div
+                class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4"
+              >
+                <span class="text-2xl">🔒</span>
+              </div>
+              <CardTitle>Secure & Private</CardTitle>
+              <CardDescription>
+                Your data is encrypted and never shared with third parties
+              </CardDescription>
+            </CardHeader>
+          </Card>
+
+          <!-- Feature 4 -->
+          <Card>
+            <CardHeader>
+              <div
+                class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4"
+              >
+                <span class="text-2xl">📱</span>
+              </div>
+              <CardTitle>Mobile Friendly</CardTitle>
+              <CardDescription>
+                Works perfectly on all devices - desktop, tablet, and mobile
+              </CardDescription>
+            </CardHeader>
+          </Card>
+
+          <!-- Feature 5 -->
+          <Card>
+            <CardHeader>
+              <div
+                class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4"
+              >
+                <span class="text-2xl">💾</span>
+              </div>
+              <CardTitle>Save Progress</CardTitle>
+              <CardDescription>
+                Your progress is automatically saved so you can continue later
+              </CardDescription>
+            </CardHeader>
+          </Card>
+
+          <!-- Feature 6 -->
+          <Card>
+            <CardHeader>
+              <div
+                class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4"
+              >
+                <span class="text-2xl">📧</span>
+              </div>
+              <CardTitle>Email Quotes</CardTitle>
+              <CardDescription>
+                Receive your quote instantly via email for your records
+              </CardDescription>
+            </CardHeader>
+          </Card>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-20">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">How It Works</h2>
+          <p class="text-xl text-muted-foreground">Get your quote in 3 simple steps</p>
+        </div>
+
+        <div class="max-w-4xl mx-auto">
+          <div class="space-y-8">
+            <!-- Step 1 -->
+            <div class="flex gap-6 items-start">
+              <div
+                class="flex-shrink-0 w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-lg"
+              >
+                1
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold mb-2">Enter Your Requirements</h3>
+                <p class="text-muted-foreground">
+                  Tell us about your project by answering a few simple questions. It takes less
+                  than 2 minutes.
+                </p>
+              </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="flex gap-6 items-start">
+              <div
+                class="flex-shrink-0 w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-lg"
+              >
+                2
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold mb-2">Get Instant Quote</h3>
+                <p class="text-muted-foreground">
+                  Our calculator processes your information and generates an accurate quote
+                  immediately.
+                </p>
+              </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="flex gap-6 items-start">
+              <div
+                class="flex-shrink-0 w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-lg"
+              >
+                3
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold mb-2">Review & Proceed</h3>
+                <p class="text-muted-foreground">
+                  Review your quote, make adjustments if needed, and proceed with confidence.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center mt-12">
+            <a href="/calculator/step-01">
+              <Button size="lg"> Start Your Quote Now → </Button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-primary text-primary-foreground">
+      <div class="container mx-auto px-4">
+        <div class="max-w-3xl mx-auto text-center">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to Get Started?</h2>
+          <p class="text-xl mb-8 opacity-90">
+            Join thousands of satisfied customers who got their instant quotes
+          </p>
+          <a href="/calculator/step-01">
+            <Button size="lg" variant="secondary"> Calculate Your Quote Now </Button>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t py-12">
+      <div class="container mx-auto px-4">
+        <div class="grid md:grid-cols-4 gap-8 mb-8">
+          <div>
+            <h3 class="font-bold mb-4">Calculator Boilerplate</h3>
+            <p class="text-sm text-muted-foreground">
+              The most advanced calculator solution for your business.
+            </p>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-4">Product</h4>
+            <ul class="space-y-2 text-sm text-muted-foreground">
+              <li><a href="#features" class="hover:text-foreground">Features</a></li>
+              <li><a href="#pricing" class="hover:text-foreground">Pricing</a></li>
+              <li>
+                <a href="/calculator/step-01" class="hover:text-foreground">Calculator</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-4">Company</h4>
+            <ul class="space-y-2 text-sm text-muted-foreground">
+              <li><a href="#" class="hover:text-foreground">About</a></li>
+              <li><a href="#" class="hover:text-foreground">Contact</a></li>
+              <li><a href="#" class="hover:text-foreground">Blog</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-4">Legal</h4>
+            <ul class="space-y-2 text-sm text-muted-foreground">
+              <li><a href="#" class="hover:text-foreground">Privacy</a></li>
+              <li><a href="#" class="hover:text-foreground">Terms</a></li>
+              <li><a href="#" class="hover:text-foreground">Cookie Policy</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="border-t pt-8 text-center text-sm text-muted-foreground">
+          <p>&copy; 2024 Calculator Boilerplate. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

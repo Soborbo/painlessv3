@@ -1,0 +1,105 @@
+# CURSOR IDE RULES - ULTIMATE CALCULATOR BOILERPLATE
+
+## 🎯 CRITICAL ARCHITECTURE
+
+This is a **FEATURE PLUGIN SYSTEM** with **ENTERPRISE-GRADE** capabilities.
+
+- Core NEVER changes, only `src/lib/config.ts`
+- Every feature is controlled by feature flags
+- `src/lib/boot.ts` is the ORCHESTRATOR
+- 100% Cloudflare Edge-compatible
+- AI-optimized architecture
+
+---
+
+## ⚡ EDGE COMPATIBILITY RULES (MANDATORY)
+
+### ✅ MUST DO:
+
+1. **AbortSignal.timeout()** on EVERY fetch
+2. **typeof window !== 'undefined'** guard for ALL window access
+3. **runtime.env** ONLY, NEVER process.env
+4. **Dynamic imports** in async functions
+5. **Try-catch** around ALL async operations
+6. **Logger** for ALL console output
+7. **Error IDs** for ALL error responses
+8. **CORS headers** on ALL API responses
+
+### ❌ FORBIDDEN:
+
+- Node.js APIs (fs, path)
+- process.env (use runtime.env)
+- Top-level await import
+- window without typeof guard
+- fetch without timeout
+- Wildcard CORS (*) in production
+- console.log (use logger)
+- Raw IPs in production
+
+---
+
+## 🏗️ FEATURE FLAG PATTERN
+
+Every feature MUST follow this pattern:
+
+```typescript
+import { CONFIG } from '@/lib/config';
+
+let _initialized = false;
+let _failed = false;
+
+export async function init(env?: any): Promise<void> {
+  if (!CONFIG.features.myFeature || _initialized || _failed) return;
+  
+  try {
+    // Initialize
+    _initialized = true;
+  } catch (error) {
+    _failed = true;
+  }
+}
+```
+
+---
+
+## 🔒 SECURITY PATTERNS
+
+All API routes must:
+1. Check payload size
+2. Check rate limit
+3. Validate with Zod
+4. Generate error ID
+5. Add CORS headers
+6. Log errors
+
+---
+
+## 📝 LOGGING STANDARDS
+
+- `logger.debug()` - Development details
+- `logger.info()` - Important events
+- `logger.warn()` - Recoverable issues
+- `logger.error()` - Failures
+
+---
+
+## 🔐 GDPR COMPLIANCE
+
+- Always use `anonymizeIP()` for IPs
+- Store hashes, not raw IPs
+- Implement data retention (180 days)
+- Soft delete before hard delete
+
+---
+
+## 📦 IMPORT ORDER
+
+1. React/Astro
+2. External libraries
+3. @/ aliased imports (config, utils)
+4. @/ aliased imports (components, lib)
+5. Relative imports
+
+---
+
+**Follow these rules strictly for maintainable, scalable code.**
