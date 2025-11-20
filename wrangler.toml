@@ -1,0 +1,38 @@
+name = "calculator-boilerplate"
+compatibility_date = "2024-01-01"
+pages_build_output_dir = "./dist"
+
+# KV Namespaces (you'll need to create these in Cloudflare dashboard)
+[[kv_namespaces]]
+binding = "RATE_LIMITER"
+id = "YOUR_RATE_LIMITER_KV_ID"
+preview_id = "YOUR_PREVIEW_RATE_LIMITER_KV_ID"
+
+[[kv_namespaces]]
+binding = "SESSIONS"
+id = "YOUR_SESSIONS_KV_ID"
+preview_id = "YOUR_PREVIEW_SESSIONS_KV_ID"
+
+[[kv_namespaces]]
+binding = "CRM_QUEUE"
+id = "YOUR_CRM_QUEUE_KV_ID"
+preview_id = "YOUR_PREVIEW_CRM_QUEUE_KV_ID"
+
+# Environment Variables
+[vars]
+NODE_ENV = "production"
+SITE_URL = "https://your-domain.com"
+ENVIRONMENT = "production"
+
+# Secrets (set via: wrangler secret put SECRET_NAME)
+# TURSO_DATABASE_URL
+# TURSO_AUTH_TOKEN
+# RESEND_API_KEY
+# GOOGLE_CLIENT_ID
+# GOOGLE_CLIENT_SECRET
+# SENTRY_DSN
+# CRM_WEBHOOK_URL
+# CRM_API_KEY
+# CRM_WEBHOOK_SECRET
+# GTM_ID
+# GA4_ID

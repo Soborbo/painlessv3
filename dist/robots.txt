@@ -1,0 +1,9 @@
+# Allow all robots
+User-agent: *
+Allow: /
+
+# Disallow admin pages
+Disallow: /admin/
+
+# Sitemap
+Sitemap: https://your-domain.com/sitemap-index.xml

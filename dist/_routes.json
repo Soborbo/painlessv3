@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "include": [
+    "/_image",
+    "/api/quotes/*"
+  ],
+  "exclude": [
+    "/",
+    "/_astro/*",
+    "/favicon.svg",
+    "/robots.txt",
+    "/api/calculate",
+    "/api/health",
+    "/api/save-quote",
+    "/api/validate",
+    "/404",
+    "/500",
+    "/calculator/*",
+    "/thank-you"
+  ]
+}

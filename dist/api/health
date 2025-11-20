@@ -1,0 +1,18 @@
+{
+  "status": "ok",
+  "timestamp": "2025-11-20T12:30:22.265Z",
+  "version": "2.0.0",
+  "environment": "unknown",
+  "features": {
+    "analytics": false,
+    "auth": false,
+    "crmSync": false,
+    "rateLimiting": true,
+    "monitoring": false
+  },
+  "checks": {
+    "database": false,
+    "email": false,
+    "kv": false
+  }
+}
