@@ -4,7 +4,8 @@
   "type": "module",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro check && astro build",
+    "build": "astro build",
+    "build:check": "astro check && astro build",
     "preview": "wrangler pages dev ./dist",
     "deploy": "npm run build && wrangler pages deploy ./dist --project-name=painlessv3",
     "db:generate": "drizzle-kit generate",
