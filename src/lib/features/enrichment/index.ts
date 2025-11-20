@@ -1,6 +1,6 @@
 /**
  * ENRICHMENT FEATURE
- * 
+ *
  * IP geolocation, device detection, etc.
  */
 

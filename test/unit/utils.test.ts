@@ -1,12 +1,5 @@
-import { describe, it, expect } from 'vitest';
-import {
-  cn,
-  formatPrice,
-  formatDate,
-  safeJsonParse,
-  truncate,
-  randomId,
-} from '@/lib/utils';
+import { cn, formatDate, formatPrice, randomId, safeJsonParse, truncate } from '@/lib/utils';
+import { describe, expect, it } from 'vitest';
 
 describe('Utilities', () => {
   it('should merge classnames correctly', () => {

@@ -1,9 +1,9 @@
 /**
  * MASTER CONFIGURATION
- * 
+ *
  * Feature flags - Everything can be toggled here
  * Core NEVER changes, only this file!
- * 
+ *
  * IMPORTANT: This file runs at BUILD-TIME (Astro config)
  * For runtime env vars, use getRuntimeConfig() in API routes
  */
@@ -131,7 +131,7 @@ export const CONFIG = {
 /**
  * Get runtime config with environment variables
  * Use this in API routes to access runtime env vars
- * 
+ *
  * CRITICAL: Always use this function, never import.meta.env in API routes
  */
 export function getRuntimeConfig(env: any) {

@@ -1,14 +1,14 @@
 /**
  * IP ANONYMIZATION
- * 
+ *
  * GDPR-compliant IP hashing
  * Store hash instead of raw IP in production
  */
 
-import { sha256 } from '@noble/hashes/sha2.js';
-import { bytesToHex } from '@noble/hashes/utils.js';
 import { CONFIG } from '@/lib/config';
 import { logger } from '@/lib/utils/logger';
+import { sha256 } from '@noble/hashes/sha2.js';
+import { bytesToHex } from '@noble/hashes/utils.js';
 
 /**
  * Anonymize IP address

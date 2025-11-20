@@ -1,16 +1,16 @@
-import { describe, it, expect } from 'vitest';
 import {
-  validateOrigin,
-  isBot,
   generateCSRFToken,
+  isBot,
   validateCSRFToken,
+  validateOrigin,
 } from '@/lib/features/security';
+import { describe, expect, it } from 'vitest';
 
 describe('Security Utilities', () => {
   it('should validate allowed origins', () => {
     const valid = validateOrigin('https://your-domain.com');
     const invalid = validateOrigin('https://evil.com');
-    
+
     expect(valid).toBe(true);
     expect(invalid).toBe(false);
   });
@@ -24,14 +24,14 @@ describe('Security Utilities', () => {
   it('should generate CSRF tokens', () => {
     const token1 = generateCSRFToken();
     const token2 = generateCSRFToken();
-    
+
     expect(token1).toHaveLength(64);
     expect(token1).not.toBe(token2);
   });
 
   it('should validate CSRF tokens', () => {
     const token = generateCSRFToken();
-    
+
     expect(validateCSRFToken(token, token)).toBe(true);
     expect(validateCSRFToken(token, 'wrong')).toBe(false);
     expect(validateCSRFToken('', token)).toBe(false);

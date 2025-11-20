@@ -1,7 +1,7 @@
-import { defineConfig } from 'astro/config';
+import cloudflare from '@astrojs/cloudflare';
 import react from '@astrojs/react';
 import tailwind from '@astrojs/tailwind';
-import cloudflare from '@astrojs/cloudflare';
+import { defineConfig } from 'astro/config';
 
 export default defineConfig({
   site: 'https://your-domain.com',
@@ -10,13 +10,10 @@ export default defineConfig({
     mode: 'directory',
     functionPerRoute: false,
   }),
-  integrations: [
-    react(),
-    tailwind({ applyBaseStyles: false }),
-  ],
+  integrations: [react(), tailwind({ applyBaseStyles: false })],
   vite: {
     ssr: {
-      noExternal: ['nanostores'],
+      noExternal: ['nanostores', '@libsql/client'],
     },
     define: {
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development'),

@@ -1,6 +1,6 @@
 /**
  * CORS HELPER
- * 
+ *
  * Generate CORS headers based on config
  * Never use wildcard (*) in production
  */

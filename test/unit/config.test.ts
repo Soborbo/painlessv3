@@ -1,5 +1,5 @@
-import { describe, it, expect } from 'vitest';
 import { CONFIG, getRuntimeConfig } from '@/lib/config';
+import { describe, expect, it } from 'vitest';
 
 describe('Configuration', () => {
   it('should have default config values', () => {

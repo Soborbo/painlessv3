@@ -1,6 +1,6 @@
 /**
  * SAFE KV WRAPPER
- * 
+ *
  * Handles missing KV namespaces gracefully
  * Returns null instead of throwing
  */
@@ -64,10 +64,7 @@ export async function kvPut(
 /**
  * Delete value from KV
  */
-export async function kvDelete(
-  kv: KVNamespace | null,
-  key: string
-): Promise<boolean> {
+export async function kvDelete(kv: KVNamespace | null, key: string): Promise<boolean> {
   if (!kv) return false;
 
   try {

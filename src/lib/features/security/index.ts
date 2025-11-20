@@ -1,6 +1,6 @@
 /**
  * SECURITY FEATURE
- * 
+ *
  * Central security utilities
  */
 
@@ -42,14 +42,7 @@ export function validateOrigin(origin: string | null): boolean {
 export function isBot(userAgent: string | null): boolean {
   if (!userAgent) return false;
 
-  const botPatterns = [
-    /bot/i,
-    /crawler/i,
-    /spider/i,
-    /scraper/i,
-    /curl/i,
-    /wget/i,
-  ];
+  const botPatterns = [/bot/i, /crawler/i, /spider/i, /scraper/i, /curl/i, /wget/i];
 
   return botPatterns.some((pattern) => pattern.test(userAgent));
 }
@@ -69,14 +62,14 @@ export function generateCSRFToken(): string {
  */
 export function validateCSRFToken(token: string, expected: string): boolean {
   if (!token || !expected) return false;
-  
+
   // Constant-time comparison
   if (token.length !== expected.length) return false;
-  
+
   let result = 0;
   for (let i = 0; i < token.length; i++) {
     result |= token.charCodeAt(i) ^ expected.charCodeAt(i);
   }
-  
+
   return result === 0;
 }

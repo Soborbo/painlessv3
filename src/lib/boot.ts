@@ -1,6 +1,6 @@
 /**
  * BOOT ORCHESTRATOR
- * 
+ *
  * Initializes all features based on feature flags
  * Called once at application startup
  */
@@ -14,7 +14,7 @@ let _booted = false;
  * Boot application
  * Initializes enabled features
  */
-export async function bootApp(env?: any): Promise<void> {
+export async function bootApp(_env?: any): Promise<void> {
   if (_booted) {
     logger.debug('Boot', 'Already booted, skipping');
     return;

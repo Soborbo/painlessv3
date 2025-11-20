@@ -1,10 +1,10 @@
-import { describe, it, expect } from 'vitest';
 import { anonymizeIP, getIPFromRequest } from '@/lib/features/enrichment/anonymize';
+import { describe, expect, it } from 'vitest';
 
 describe('IP Anonymization', () => {
   it('should anonymize IP addresses', () => {
     const result = anonymizeIP('192.168.1.1');
-    
+
     // In development mode, ipAnonymization is disabled
     // So we get raw IP and empty hash
     if (result.hash) {
@@ -23,7 +23,7 @@ describe('IP Anonymization', () => {
         'CF-Connecting-IP': '192.168.1.1',
       },
     });
-    
+
     const ip = getIPFromRequest(request);
     expect(ip).toBe('192.168.1.1');
   });
@@ -34,14 +34,14 @@ describe('IP Anonymization', () => {
         'X-Forwarded-For': '192.168.1.1, 10.0.0.1',
       },
     });
-    
+
     const ip = getIPFromRequest(request);
     expect(ip).toBe('192.168.1.1');
   });
 
   it('should return unknown if no IP headers', () => {
     const request = new Request('https://example.com');
-    
+
     const ip = getIPFromRequest(request);
     expect(ip).toBe('unknown');
   });

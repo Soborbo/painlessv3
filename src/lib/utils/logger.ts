@@ -1,6 +1,6 @@
 /**
  * CENTRAL LOGGER
- * 
+ *
  * Structured logging with levels
  * Production: only errors logged
  * Development: all logs visible
@@ -9,15 +9,6 @@
 import { CONFIG } from '@/lib/config';
 
 export type LogLevel = 'debug' | 'info' | 'warn' | 'error';
-
-interface LogEntry {
-  level: LogLevel;
-  module: string;
-  message: string;
-  data?: Record<string, unknown>;
-  timestamp: string;
-  errorId?: string;
-}
 
 /**
  * Log message with level
@@ -32,14 +23,6 @@ export function log(
   if (!CONFIG.debug && level !== 'error' && level !== 'warn') {
     return;
   }
-
-  const entry: LogEntry = {
-    level,
-    module,
-    message,
-    data,
-    timestamp: new Date().toISOString(),
-  };
 
   const prefix = `[${level.toUpperCase()}][${module}]`;
 

@@ -1,6 +1,6 @@
 /**
  * FINGERPRINT GENERATION
- * 
+ *
  * Generate unique hashes for duplicate prevention
  * Uses @noble/hashes (Edge-compatible)
  */
@@ -57,7 +57,7 @@ export async function verifyHMAC(
 ): Promise<boolean> {
   try {
     const encoder = new TextEncoder();
-    
+
     // Import secret as key
     const key = await crypto.subtle.importKey(
       'raw',
@@ -71,8 +71,12 @@ export async function verifyHMAC(
     const signatureBytes = hexToBytes(signature);
     const payloadBytes = encoder.encode(payload);
 
-    // Verify signature
-    return await crypto.subtle.verify('HMAC', key, signatureBytes, payloadBytes);
+    // Verify signature - use the buffer property
+    const sigBuffer = signatureBytes.buffer.slice(
+      signatureBytes.byteOffset,
+      signatureBytes.byteOffset + signatureBytes.byteLength
+    ) as ArrayBuffer;
+    return await crypto.subtle.verify('HMAC', key, sigBuffer, payloadBytes);
   } catch (error) {
     return false;
   }
@@ -84,7 +88,7 @@ export async function verifyHMAC(
  */
 export async function generateHMAC(payload: string, secret: string): Promise<string> {
   const encoder = new TextEncoder();
-  
+
   // Import secret as key
   const key = await crypto.subtle.importKey(
     'raw',
@@ -105,7 +109,7 @@ export async function generateHMAC(payload: string, secret: string): Promise<str
 function hexToBytes(hex: string): Uint8Array {
   const bytes = new Uint8Array(hex.length / 2);
   for (let i = 0; i < hex.length; i += 2) {
-    bytes[i / 2] = parseInt(hex.substring(i, i + 2), 16);
+    bytes[i / 2] = Number.parseInt(hex.substring(i, i + 2), 16);
   }
   return bytes;
 }

@@ -1,6 +1,6 @@
 /**
  * ERROR UTILITIES
- * 
+ *
  * Generate unique error IDs for tracking
  * User reports error ID, you find it in logs
  */
@@ -34,11 +34,7 @@ export function formatError(error: unknown, errorId: string): Record<string, unk
 /**
  * Create error response with ID
  */
-export function createErrorResponse(
-  message: string,
-  errorId: string,
-  status: number = 500
-): Response {
+export function createErrorResponse(message: string, errorId: string, status = 500): Response {
   return new Response(
     JSON.stringify({
       success: false,
@@ -62,7 +58,7 @@ export class AppError extends Error {
   public readonly errorId: string;
   public readonly statusCode: number;
 
-  constructor(message: string, statusCode: number = 500) {
+  constructor(message: string, statusCode = 500) {
     super(message);
     this.name = 'AppError';
     this.errorId = generateErrorId();

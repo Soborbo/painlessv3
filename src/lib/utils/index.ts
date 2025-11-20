@@ -1,10 +1,10 @@
 /**
  * UTILITY FUNCTIONS
- * 
+ *
  * Common utilities used throughout the application
  */
 
-import { clsx, type ClassValue } from 'clsx';
+import { type ClassValue, clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 
 /**
@@ -17,7 +17,7 @@ export function cn(...inputs: ClassValue[]) {
 /**
  * Format price with currency
  */
-export function formatPrice(amount: number, currency: string = 'HUF'): string {
+export function formatPrice(amount: number, currency = 'HUF'): string {
   return new Intl.NumberFormat('hu-HU', {
     style: 'currency',
     currency: currency,
@@ -31,7 +31,7 @@ export function formatPrice(amount: number, currency: string = 'HUF'): string {
  */
 export function formatDate(date: Date | number | string): string {
   const d = typeof date === 'string' || typeof date === 'number' ? new Date(date) : date;
-  
+
   return new Intl.DateTimeFormat('hu-HU', {
     year: 'numeric',
     month: 'long',
@@ -70,7 +70,7 @@ export function truncate(str: string, length: number): string {
 /**
  * Generate random ID
  */
-export function randomId(length: number = 8): string {
+export function randomId(length = 8): string {
   const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
   let result = '';
   for (let i = 0; i < length; i++) {
