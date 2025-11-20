@@ -22,6 +22,7 @@
   "dependencies": {
     "@astrojs/cloudflare": "^11.0.0",
     "@astrojs/react": "^3.6.0",
+    "@astrojs/sitemap": "^3.6.0",
     "@astrojs/tailwind": "^5.1.0",
     "@libsql/client": "^0.15.15",
     "@nanostores/react": "^0.7.0",

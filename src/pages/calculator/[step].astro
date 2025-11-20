@@ -1,0 +1,49 @@
+---
+/**
+ * CALCULATOR STEP PAGE
+ * 
+ * Dynamic routing for calculator steps
+ */
+
+import LayoutCalculator from '@/components/calculator/layout-calculator.astro';
+import { getStepById, CALCULATOR_STEPS } from '@/lib/core/calculator/config';
+
+// Get step from URL
+const { step } = Astro.params;
+
+// Validate step
+const stepConfig = getStepById(step || '');
+
+if (!stepConfig) {
+  return Astro.redirect('/404');
+}
+
+// Get step order for progress
+const stepOrder = stepConfig.order;
+
+export function getStaticPaths() {
+  return CALCULATOR_STEPS.map((step) => ({
+    params: { step: step.id },
+  }));
+}
+---
+
+<LayoutCalculator
+  title={stepConfig.title.en}
+  description={stepConfig.description?.en}
+  currentStep={stepOrder}
+>
+  <!-- Calculator App Mount Point -->
+  <div id="calculator-app" data-step={step}></div>
+
+  <script>
+    // This will be hydrated by React
+    import { Step01Example } from '@/components/calculator/steps/step-01-example';
+    import { StepSummary } from '@/components/calculator/steps/step-summary';
+
+    // Note: In a real app, you'd dynamically import the correct step component
+    // For now, this is a placeholder that will be enhanced
+
+    console.log('Calculator step loaded:', document.querySelector('#calculator-app')?.dataset.step);
+  </script>
+</LayoutCalculator>

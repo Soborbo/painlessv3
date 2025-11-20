@@ -11,6 +11,8 @@ import { createErrorResponse, generateErrorId } from '@/lib/utils/error';
 import { logger } from '@/lib/utils/logger';
 import type { APIRoute } from 'astro';
 
+export const prerender = false;
+
 export const GET: APIRoute = async (context) => {
   const runtime = context.locals.runtime as any;
   const errorId = generateErrorId();
